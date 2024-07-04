@@ -6,7 +6,7 @@ import './Home.css';
 import Typewriter from 'typewriter-effect';
 
 const Model = ({ lightPosition }) => {
-  const { scene } = useGLTF('office_desk/scene.gltf'); // Update the path to your GLTF model
+  const { scene } = useGLTF('office_desk/scene.gltf');
   
   useEffect(() => {
     if (scene) {
