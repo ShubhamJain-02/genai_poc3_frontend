@@ -10,12 +10,10 @@ const Model = ({ lightPosition }) => {
   
   useEffect(() => {
     if (scene) {
-      // Adjust rotation and scale as needed
       scene.rotation.y = Math.PI / 3;
       scene.rotation.z = Math.PI / 10;
       scene.scale.set(4, 4, 4);
 
-      // Calculate bounding box and position adjustments
       const boundingBox = new THREE.Box3().setFromObject(scene);
       const size = boundingBox.getSize(new THREE.Vector3());
       const offsetX = size.x / 2;
@@ -29,7 +27,7 @@ const Model = ({ lightPosition }) => {
    if (scene) {
       const boundingBox = new THREE.Box3().setFromObject(scene);
       const size = boundingBox.getSize(new THREE.Vector3());
-     scene.position.y =-size.y / 2+ Math.sin(state.clock.elapsedTime) * 0.2; // Adjust amplitude as needed
+     scene.position.y =-size.y / 2+ Math.sin(state.clock.elapsedTime) * 0.2; 
    }
  });
   return (
@@ -67,7 +65,7 @@ const Home = () => {
     return () => {
       document.body.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []); // Empty dependency array to run effect only once
+  }, []); 
 
   return (
    <div className='home2'>
